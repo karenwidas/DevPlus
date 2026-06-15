@@ -1,6 +1,6 @@
 # Systems Inventory — DevPlus / CoCard Operations
 
-**Last updated:** 2026-04-13 (repo move + SignWell workflows added)
+**Last updated:** 2026-06-15 — removed quote-builder (file missing); added 9 HTML files (merchant-form, decrypt-tool, approve, eula, privacy-policy, icons/preview, 3 email templates); added 3 n8n CRM workflows (send-form, merchant-form-submit, convert-lead)
 **Maintained by:** Claude Code scheduled agent (weekly, Mondays)
 
 ---
@@ -30,7 +30,15 @@
 | `index.html` | Main dashboard — card grid, workflow status, chat panel |
 | `ticket-manager/ticket-manager.html` | Ticket management app |
 | `forecast/forecast.html` | Ticket forecasting / scheduling tool |
-| `leads/quote-builder.html` | Quote builder for leads (new, in progress) |
+| `leads/merchant-form.html` | Merchant Application Form (public-facing) |
+| `leads/decrypt-tool.html` | Merchant Application Viewer — decrypt / view submitted forms |
+| `cocard/approve.html` | CoCard approve action page |
+| `eula.html` | EULA for IMG Services FM Invoicing App |
+| `privacy-policy.html` | Privacy Policy for IMG Services FM Invoicing App |
+| `icons/preview.html` | Icon preview for CoCard apps |
+| `email-date-request.html` | FM email template: date request to market managers |
+| `email-remove-hold.html` | FM email template: remove seasonal hold (internal) |
+| `email-close-account.html` | FM email template: close account (internal) |
 | `n8n/` | n8n workflow JSON exports |
 | `airtable/` | Airtable schema reference |
 | `CLAUDE.md` | Claude Code project instructions / tech spec |
@@ -69,6 +77,9 @@
 | `n8n/crm/signwell-completed.json` | Handle SignWell completion webhook |
 | `n8n/crm/signwell-templates.json` | Fetch available SignWell templates |
 | `n8n/crm/lead-created.json` | CRM lead created trigger |
+| `n8n/crm/send-form.json` | Send Merchant Form to prospect |
+| `n8n/crm/merchant-form-submit.json` | Handle Merchant Form submission |
+| `n8n/crm/convert-lead.json` | Convert lead to customer (Companies + Contacts) |
 
 ---
 
