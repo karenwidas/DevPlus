@@ -1,6 +1,6 @@
 # Systems Inventory — DevPlus / CoCard Operations
 
-**Last updated:** 2026-04-13 (repo move + SignWell workflows added)
+**Last updated:** 2026-07-27 — 9 new HTML files added (cocard/approve, email templates, eula, privacy-policy, leads/merchant-form, leads/decrypt-tool, icons/preview), quote-builder removed, 3 new n8n exports (convert-lead, merchant-form-submit, send-form)
 **Maintained by:** Claude Code scheduled agent (weekly, Mondays)
 
 ---
@@ -30,7 +30,15 @@
 | `index.html` | Main dashboard — card grid, workflow status, chat panel |
 | `ticket-manager/ticket-manager.html` | Ticket management app |
 | `forecast/forecast.html` | Ticket forecasting / scheduling tool |
-| `leads/quote-builder.html` | Quote builder for leads (new, in progress) |
+| `cocard/approve.html` | CoCard approval page |
+| `leads/merchant-form.html` | Merchant onboarding form (public-facing) |
+| `leads/decrypt-tool.html` | Decrypt tool for leads |
+| `eula.html` | End-user license agreement page |
+| `privacy-policy.html` | Privacy policy page |
+| `icons/preview.html` | Icon set preview / reference |
+| `email-date-request.html` | FM season date request email template |
+| `email-remove-hold.html` | FM season remove-hold email template |
+| `email-close-account.html` | FM season close-account email template |
 | `n8n/` | n8n workflow JSON exports |
 | `airtable/` | Airtable schema reference |
 | `CLAUDE.md` | Claude Code project instructions / tech spec |
@@ -69,6 +77,9 @@
 | `n8n/crm/signwell-completed.json` | Handle SignWell completion webhook |
 | `n8n/crm/signwell-templates.json` | Fetch available SignWell templates |
 | `n8n/crm/lead-created.json` | CRM lead created trigger |
+| `n8n/crm/convert-lead.json` | Convert lead to merchant account |
+| `n8n/crm/merchant-form-submit.json` | Handle merchant form submission |
+| `n8n/crm/send-form.json` | Send merchant form link to prospect |
 
 ---
 
