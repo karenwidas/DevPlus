@@ -1,6 +1,6 @@
 # Systems Inventory — DevPlus / CoCard Operations
 
-**Last updated:** 2026-04-13 (repo move + SignWell workflows added)
+**Last updated:** 2026-08-03 — no commits this week; reconciled repo contents: added leads/merchant-form, leads/decrypt-tool, cocard/approve, eula, privacy-policy, email templates; 3 new n8n/crm exports; 5 FM workflow JSONs at repo root; removed leads/quote-builder.html (not found in repo)
 **Maintained by:** Claude Code scheduled agent (weekly, Mondays)
 
 ---
@@ -30,7 +30,14 @@
 | `index.html` | Main dashboard — card grid, workflow status, chat panel |
 | `ticket-manager/ticket-manager.html` | Ticket management app |
 | `forecast/forecast.html` | Ticket forecasting / scheduling tool |
-| `leads/quote-builder.html` | Quote builder for leads (new, in progress) |
+| `leads/merchant-form.html` | Merchant application / onboarding form |
+| `leads/decrypt-tool.html` | Decrypt tool (leads) |
+| `cocard/approve.html` | CoCard approval page |
+| `eula.html` | End-user license agreement |
+| `privacy-policy.html` | Privacy policy page |
+| `email-close-account.html` | FM email template — close account (paste into n8n Gmail node) |
+| `email-date-request.html` | FM email template — date request (paste into n8n Gmail node) |
+| `email-remove-hold.html` | FM email template — remove hold (paste into n8n Gmail node) |
 | `n8n/` | n8n workflow JSON exports |
 | `airtable/` | Airtable schema reference |
 | `CLAUDE.md` | Claude Code project instructions / tech spec |
@@ -69,6 +76,9 @@
 | `n8n/crm/signwell-completed.json` | Handle SignWell completion webhook |
 | `n8n/crm/signwell-templates.json` | Fetch available SignWell templates |
 | `n8n/crm/lead-created.json` | CRM lead created trigger |
+| `n8n/crm/convert-lead.json` | Convert lead to merchant account |
+| `n8n/crm/merchant-form-submit.json` | Handle merchant application form submission |
+| `n8n/crm/send-form.json` | Send merchant form to applicant |
 
 ---
 
@@ -93,6 +103,16 @@
 | FM_Season_Close_Account | Closes FM account at season end | Office (internal) |
 
 **4 FM Markets:** Military Avenue Inc (year-round), On Broadway Inc, City of Manitowoc, Downtown Green Bay
+
+### FM Workflow JSON Exports (repo root)
+
+| Export File | Purpose |
+|---|---|
+| `FM_Season_Annual_Creator.json` | Annual FM season creator workflow export |
+| `FM_Season_Date_Submission_Form.json` | FM date submission form workflow export |
+| `FM_Remove_Hold_Request.json` | FM remove hold request workflow export |
+| `FM_Close_Account_Request.json` | FM close account request workflow export |
+| `FM_QB_Invoice_Creator.json` | FM QuickBooks invoice creator workflow export |
 
 ---
 
