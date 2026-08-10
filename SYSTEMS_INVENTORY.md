@@ -1,6 +1,6 @@
 # Systems Inventory — DevPlus / CoCard Operations
 
-**Last updated:** 2026-04-13 (repo move + SignWell workflows added)
+**Last updated:** 2026-08-10 — added merchant form / decrypt tool / approve page / EULA / privacy policy; removed quote-builder; added 3 n8n CRM exports
 **Maintained by:** Claude Code scheduled agent (weekly, Mondays)
 
 ---
@@ -30,7 +30,12 @@
 | `index.html` | Main dashboard — card grid, workflow status, chat panel |
 | `ticket-manager/ticket-manager.html` | Ticket management app |
 | `forecast/forecast.html` | Ticket forecasting / scheduling tool |
-| `leads/quote-builder.html` | Quote builder for leads (new, in progress) |
+| `leads/merchant-form.html` | Merchant application form (encrypted submission) |
+| `leads/decrypt-tool.html` | Merchant application viewer / decrypt tool (internal) |
+| `cocard/approve.html` | CoCard approve-action page |
+| `eula.html` | EULA — IMG Services FM Invoicing App |
+| `privacy-policy.html` | Privacy policy — IMG Services FM Invoicing App |
+| `icons/preview.html` | Icon set preview (internal dev utility) |
 | `n8n/` | n8n workflow JSON exports |
 | `airtable/` | Airtable schema reference |
 | `CLAUDE.md` | Claude Code project instructions / tech spec |
@@ -69,6 +74,9 @@
 | `n8n/crm/signwell-completed.json` | Handle SignWell completion webhook |
 | `n8n/crm/signwell-templates.json` | Fetch available SignWell templates |
 | `n8n/crm/lead-created.json` | CRM lead created trigger |
+| `n8n/crm/send-form.json` | Send Merchant Form to applicant |
+| `n8n/crm/merchant-form-submit.json` | Handle merchant form submission |
+| `n8n/crm/convert-lead.json` | Convert lead to full customer account |
 
 ---
 
@@ -101,4 +109,3 @@
 - [ ] Fix `Code: Find FM Season` node — debug filterByFormula for 2026 seasons
 - [ ] Swap Gmail sender: `kwidas@me.com` → `support@imgservices.com` in FM workflows
 - [ ] QuickBooks production keys — waiting on Intuit compliance portal bug resolution
-- [ ] Quote builder (`leads/quote-builder.html`) — in progress
