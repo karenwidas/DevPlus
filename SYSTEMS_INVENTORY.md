@@ -1,6 +1,6 @@
 # Systems Inventory — DevPlus / CoCard Operations
 
-**Last updated:** 2026-04-13 (repo move + SignWell workflows added)
+**Last updated:** 2026-10-26 — added leads module (merchant-form, decrypt-tool, approve, eula, privacy-policy, email templates), 3 new n8n CRM exports, Leads table, 3 new webhooks; removed quote-builder entry
 **Maintained by:** Claude Code scheduled agent (weekly, Mondays)
 
 ---
@@ -30,7 +30,15 @@
 | `index.html` | Main dashboard — card grid, workflow status, chat panel |
 | `ticket-manager/ticket-manager.html` | Ticket management app |
 | `forecast/forecast.html` | Ticket forecasting / scheduling tool |
-| `leads/quote-builder.html` | Quote builder for leads (new, in progress) |
+| `leads/merchant-form.html` | Merchant application form — multi-page, client-side AES-256 encryption for PII |
+| `leads/decrypt-tool.html` | Local-only tool to decrypt submitted merchant application data |
+| `cocard/approve.html` | CoCard approval action page |
+| `eula.html` | EULA — IMG Services FM Invoicing App |
+| `privacy-policy.html` | Privacy policy — IMG Services FM Invoicing App |
+| `email-date-request.html` | Email template — FM date request (to FM market managers) |
+| `email-remove-hold.html` | Email template — FM remove seasonal hold (internal) |
+| `email-close-account.html` | Email template — FM close account (internal) |
+| `icons/preview.html` | Icon set preview helper |
 | `n8n/` | n8n workflow JSON exports |
 | `airtable/` | Airtable schema reference |
 | `CLAUDE.md` | Claude Code project instructions / tech spec |
@@ -58,6 +66,7 @@
 | Ticket Tasks | Subtasks linked to tickets |
 | FM Seasons | Farmers market season records |
 | Merchant Application | Merchant onboarding applications |
+| Leads | Prospective merchant lead pipeline (tblQe6TUV4DayDMUQ) |
 
 ---
 
@@ -68,7 +77,10 @@
 | `n8n/crm/send-for-signature.json` | Send SignWell document from dashboard |
 | `n8n/crm/signwell-completed.json` | Handle SignWell completion webhook |
 | `n8n/crm/signwell-templates.json` | Fetch available SignWell templates |
-| `n8n/crm/lead-created.json` | CRM lead created trigger |
+| `n8n/crm/lead-created.json` | CRM lead created — creates Dropbox folder, writes path back to Leads table |
+| `n8n/crm/send-form.json` | Send merchant application form link via email, set lead status → Form Sent |
+| `n8n/crm/merchant-form-submit.json` | Handle merchant form POST — write fields to lead, save files to Dropbox |
+| `n8n/crm/convert-lead.json` | Convert lead to customer — create Company + Contact, move Dropbox folder |
 
 ---
 
@@ -81,6 +93,9 @@
 | `/webhook/create-ticket` | Dashboard ticket form |
 | `/webhook/create-recurring-ticket` | Ticket Manager on ticket close |
 | `/webhook/n8n-status-proxy` | Dashboard workflow status cards |
+| `/webhook/lead-created` | Leads pipeline — new lead trigger |
+| `/webhook/send-form` | Leads pipeline — send merchant form email |
+| `/webhook/merchant-form-submit` | Leads pipeline — merchant-form.html POST handler |
 
 ---
 
